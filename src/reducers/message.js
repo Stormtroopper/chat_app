@@ -1,4 +1,4 @@
-import * as types from '../constants/actionTypes';
+import * as types from '../constant/ActionTypes.js';
 
 export const message=(state=[],action)=>{
     switch(action.type){

@@ -1,5 +1,5 @@
 import * as types from "../constant/ActionTypes";
-import { messageReceived, populateUsersList } from "../actions";
+import { messageReceived, populateUserList } from "../actions";
 
 const setupSocket = (dispatch, username) => {
   const socket = new WebSocket("ws://localhost:8989");
@@ -19,7 +19,7 @@ const setupSocket = (dispatch, username) => {
     if (message.type === types.ADD_MESSAGE) {
       dispatch(messageReceived(message.message, message.author));
     } else if (message.type === types.POPULATE_USER_LIST) {
-      dispatch(populateUsersList(message.users));
+      dispatch(populateUserList(message.users));
     }
   };
 
