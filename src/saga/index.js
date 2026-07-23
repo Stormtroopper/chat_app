@@ -1,8 +1,10 @@
-const handleMessage=(params,message)=>{
-    const updatedAction={
-        ...action,
-        author:params.username,
-    };
-    params.socket.send(JSON.stringify(updatedAction));
-}
+const handleMessage = ({ socket, username }, action) => {
+  const updatedAction = {
+    ...action,
+    author: username,
+  };
+
+  socket.send(JSON.stringify(updatedAction));
+};
+
 export default handleMessage;

@@ -5,8 +5,8 @@ import App from './App.jsx'
 import { sagaMiddleware, store } from './store/index.js'
 import handleMessage from './saga/index.js'
 import setupSocket from './socket/index.js'
-const socket=setupSocket(store.dispatch,username);
-sagaMiddleware.run(handleMessage,{socket,username});
+const socket=setupSocket(store.dispatch,{username:'test123'});
+sagaMiddleware.run(handleMessage,{socket,username:'test123'});
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
